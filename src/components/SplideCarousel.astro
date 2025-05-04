@@ -1,0 +1,42 @@
+---
+
+---
+
+<div class="splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide"><img src="/images/slide1.jpg" alt="" /></li>
+      <li class="splide__slide"><img src="/images/slide2.jpg" alt="" /></li>
+      <li class="splide__slide"><img src="/images/slide3.jpg" alt="" /></li>
+    </ul>
+  </div>
+</div>
+
+<style>
+    .splide {
+      max-width: 800px;
+      margin: auto;
+    }
+  
+    .splide__slide img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  </style>
+
+<script>
+import Splide from '@splidejs/splide';
+import '@splidejs/splide/dist/css/splide.min.css';
+
+const defaultOptions = {
+    type: 'loop',
+    perPage: 1,
+    autoplay: true,
+    interval: 3000,
+};
+
+const mergedOptions = Object.assign({}, defaultOptions, Astro.props.options);
+
+new Splide('.splide', mergedOptions).mount();
+</script>

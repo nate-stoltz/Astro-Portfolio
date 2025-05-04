@@ -1,0 +1,59 @@
+[
+    {
+        "carouselImg" : "../public/images/carousel/XfinityHero.jpg",
+        "type" : "Custom Website",
+        "hero" : "project2_hero-img.jpg",
+        "headline" : "PROJECT 2 HEADLINE",
+        "subheadline" : "PROJECT 2 SUBHEADLINE",
+        "description" : "Lorem ipsum dolor sit amet consectetur. Ut tortor urna morbi tellus massa cursus ultrices. Faucibus urna integer erat lectus dolor amet et imperdiet. Ridiculus amet fringilla volutpat neque elit vitae vitae felis. Enim a ultrices dis in massa quisque sapien ut et. Tortor aenean suspendisse velit euismod sagittis ultrices volutpat dis arcu. Magna mattis fusce fermentum sit eget. Auctor nunc euismod lacus sed.",
+        "video" : "video.mp4",
+        "images" : [
+            "image1.jpg",
+            "image2.jpg",
+            "image3.jpg"
+        ]
+    },
+    {
+        "carouselImg" : "../public/images/carousel/HumanaVNCHero.jpg",
+        "type" : "Custom Website",
+        "hero" : "project1_hero-img.jpg",
+        "headline" : "Humana",
+        "subheadline" : "VNC",
+        "description" : "Lorem ipsum dolor sit amet consectetur. Ut tortor urna morbi tellus massa cursus ultrices. Faucibus urna integer erat lectus dolor amet et imperdiet. Ridiculus amet fringilla volutpat neque elit vitae vitae felis. Enim a ultrices dis in massa quisque sapien ut et. Tortor aenean suspendisse velit euismod sagittis ultrices volutpat dis arcu. Magna mattis fusce fermentum sit eget. Auctor nunc euismod lacus sed.",
+        "video" : "video.mp4",
+        "images" : [
+            "image1.jpg",
+            "image2.jpg",
+            "image3.jpg"
+        ]
+    },
+    {
+        "carouselImg" : "../public/images/carousel/TrueStoryHero.jpg",
+        "type" : "Custom Website",
+        "hero" : "project1_hero-img.jpg",
+        "headline" : "True Story",
+        "subheadline" : "PPLenz",
+        "description" : "Lorem ipsum dolor sit amet consectetur. Ut tortor urna morbi tellus massa cursus ultrices. Faucibus urna integer erat lectus dolor amet et imperdiet. Ridiculus amet fringilla volutpat neque elit vitae vitae felis. Enim a ultrices dis in massa quisque sapien ut et. Tortor aenean suspendisse velit euismod sagittis ultrices volutpat dis arcu. Magna mattis fusce fermentum sit eget. Auctor nunc euismod lacus sed.",
+        "video" : "video.mp4",
+        "images" : [
+            "image1.jpg",
+            "image2.jpg",
+            "image3.jpg"
+        ]
+    },
+    {
+        "carouselImg" : "../public/images/carousel/PPLenzHero.jpg",
+        "type" : "Custom Website",
+        "hero" : "project1_hero-img.jpg",
+        "headline" : "PPLenz",
+        "subheadline" : "PPLenz",
+        "description" : "Lorem ipsum dolor sit amet consectetur. Ut tortor urna morbi tellus massa cursus ultrices. Faucibus urna integer erat lectus dolor amet et imperdiet. Ridiculus amet fringilla volutpat neque elit vitae vitae felis. Enim a ultrices dis in massa quisque sapien ut et. Tortor aenean suspendisse velit euismod sagittis ultrices volutpat dis arcu. Magna mattis fusce fermentum sit eget. Auctor nunc euismod lacus sed.",
+        "video" : "video.mp4",
+        "images" : [
+            "image1.jpg",
+            "image2.jpg",
+            "image3.jpg"
+        ]
+    }
+    
+]
