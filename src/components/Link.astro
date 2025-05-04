@@ -1,17 +1,24 @@
 ---
-const { href = "/" } = Astro.props
+const { href = "/", title, ariaLabel } = Astro.props;
 ---
 
-<a href={href}>
+<a href={href} title={title} aria-label={ariaLabel}>
     <slot/>
 </a>
 
-
+<!-- Styles scoped only to NavLink component -->
 <style lang="scss">
     a {
-        color:red;
-        &:hover {
-            color:cornflowerblue
+        color:#fff;
+        margin:0 24px;
+        font-size:18px;
+        letter-spacing: 1.8px;
+        text-decoration:none;
+        &:first-child {
+            margin-left:0;
+        }
+        &:last-child {
+            margin-right: 0;
         }
     }
 </style>

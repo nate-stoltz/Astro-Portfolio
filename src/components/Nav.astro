@@ -1,4 +1,14 @@
 ---
+import Link from './Link.astro';
 ---
 
-<!-- NAV -->
+<div class="nav">
+    <Link href="/about" title="About" ariaLabel="About">About</Link>
+    <Link href="/projects" title="Projects" ariaLabel="Projects">Projects</Link>
+    <Link href="/contact" title="Contact" ariaLabel="Contact">Contact</Link>
+</div>
+
+<style lang="scss">
+    .nav {
+    }
+</style>

@@ -1,4 +1,38 @@
 ---
+import Nav from './Nav.astro';
 ---
 
-<!-- HEADER -->
+<header>
+    <div class="logo">
+        <a href="/" title="Home" aria-label="Home">
+            <svg width="69" height="34" viewBox="0 0 69 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.17864 0.83636H6.71661L11.7859 20.6872H11.8807V0.83636H16.5236V34H11.17L4.9163 9.79054H4.82155V34H0.17864V0.83636ZM24.424 0.83636H31.4831L36.8841 34H31.6726L30.7251 27.4146V27.5094H24.803L23.8555 34H19.0231L24.424 0.83636ZM30.1092 23.0086L27.7877 6.61631H27.693L25.4189 23.0086H30.1092ZM41.3123 5.57402H35.864V0.83636H51.972V5.57402H46.5237V34H41.3123V5.57402ZM54.4952 0.83636H68.7082V5.57402H59.7066V14.3387H66.8605V19.0764H59.7066V29.2623H68.7082V34H54.4952V0.83636Z" fill="white"/>
+            </svg>
+        </a>
+    </div>
+    <div class="menu">
+       <Nav></Nav>
+    </div>
+</header>
+
+<!-- Style scoped only to Header component -->
+<style lang="scss">
+	header {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        display:flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-between;
+        padding:34px 171px 34px 34px; 
+        z-index:1;
+        .logo {
+
+        }
+        .menu {
+            
+        }
+    }
+</style>

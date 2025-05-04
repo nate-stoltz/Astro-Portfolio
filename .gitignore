@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Ignoring the Splide Shader File
+/src/lib/splide-extension-shader.min.js
