@@ -1,0 +1,66 @@
+---
+import { getElementClassName } from '../utils/getClassName';
+import ImageGrid from '../components/ImageGrid.astro';
+
+const {
+  Headline,
+  SubHeadline = "",
+  Copy = "",
+  ButtonHref = "",
+  ButtonTitle = "",
+  ButtonLabel = "",
+  PageId = "",
+  TextClass = "",
+  GridClass = "",
+  Images = [] 
+} = Astro.props;
+
+const SubHeadlineLines: string[] = SubHeadline.split('\n');
+const CopyLines: string[] = Copy.split('\n');
+---
+
+<article class={getElementClassName('main__article', '', TextClass)}>
+  <div class={getElementClassName('centered-content', '', PageId)}>
+    <div class="centered-content__item">
+      <div class={getElementClassName('text', '', TextClass)}>
+        {Headline && (
+          <h1 class={getElementClassName('text', 'h1', PageId)}>
+            {Headline}
+          </h1>
+        )}
+    
+        {SubHeadline && (
+          <h2 class={getElementClassName('text', 'h2', PageId)}>
+            {SubHeadlineLines.map((line, index) => (
+              <>
+                <span>{line}</span>
+              </>
+            ))}
+          </h2>
+        )}
+    
+        {Copy && (
+          <p class={getElementClassName('text', 'p', PageId)}>
+            {CopyLines.map((line, index) => (
+              <>
+                <span>{line}</span>
+              </>
+            ))}
+          </p>
+        )}
+      </div>
+      
+      {ButtonHref && ButtonLabel && (
+        <a href={ButtonHref} class="btn btn--solid-white" title={ButtonTitle || ButtonLabel}>
+          {ButtonLabel}
+        </a>
+      )}
+      
+      {Images.length > 0 && (
+        <ImageGrid images={Images} gridClass={GridClass} />
+      )}
+    </div>
+  </div>
+</article>
+
+

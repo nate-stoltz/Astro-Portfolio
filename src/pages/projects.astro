@@ -1,0 +1,30 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import SectionMenu from '../components/SectionNav.astro';
+
+const projects = await getCollection('projects');
+type ProjectEntry = CollectionEntry<'projects'>;
+---
+
+<MainLayout pageTitle="Projects" mainId="Projects">
+  <section class="main__section">
+    <div class="scrollable">
+      <div class="scrollable__track">
+        {projects.map(({ data, slug }: ProjectEntry) => (
+          <div class="scrollable__track-item">
+            <a href={`/projects/${slug}`} class="scrollable__track-item-link">
+              <img src={data.previewImage} alt={data.title} loading="lazy" />
+              <div class="text text--project">
+                <h2 class="text text__h2" set:html={data.title}></h2>
+                <p class="text text__p">{data.description}</p>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+      
+    </div>
+  </section>
+  <SectionMenu />
+</MainLayout>

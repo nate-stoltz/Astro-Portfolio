@@ -1,4 +1,26 @@
 ---
+// no import needed here
 ---
 
-<!-- SECTION NAV -->
+<div class="section-nav">
+    <div class="section-nav__row" data-section-nav="up" aria-disabled="true">
+        <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="-0.5" y="-0.5" width="40" height="40" rx="20" transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 40 40)" stroke="white"/>
+            <path d="M19.6464 11.6464C19.8417 11.4512 20.1583 11.4512 20.3536 11.6464L23.5355 14.8284C23.7308 15.0237 23.7308 15.3403 23.5355 15.5355C23.3403 15.7308 23.0237 15.7308 22.8284 15.5355L20 12.7071L17.1716 15.5355C16.9763 15.7308 16.6597 15.7308 16.4645 15.5355C16.2692 15.3403 16.2692 15.0237 16.4645 14.8284L19.6464 11.6464ZM19.5 28L19.5 12L20.5 12L20.5 28L19.5 28Z" fill="white"/>
+        </svg>
+    </div>
+    <div class="section-nav__row" data-section-nav="indicator"></div>
+    <div class="section-nav__row" data-section-nav="down" aria-disabled="true">
+        <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40.5" y="0.5" width="40" height="40" rx="20" transform="rotate(90 40.5 0.5)" stroke="white"/>
+            <path d="M19.6464 29.3536C19.8417 29.5488 20.1583 29.5488 20.3536 29.3536L23.5355 26.1716C23.7308 25.9763 23.7308 25.6597 23.5355 25.4645C23.3403 25.2692 23.0237 25.2692 22.8284 25.4645L20 28.2929L17.1716 25.4645C16.9763 25.2692 16.6597 25.2692 16.4645 25.4645C16.2692 25.6597 16.2692 25.9763 16.4645 26.1716L19.6464 29.3536ZM19.5 13L19.5 29L20.5 29L20.5 13L19.5 13Z" fill="white"/>
+        </svg>
+    </div>
+</div>
+  
+  <!-- ✅ Hydrate manually with client:load -->
+  <script>
+    import { sectionNav } from '../scripts/section-nav.js';
+    sectionNav.init();
+  </script>
+  

@@ -1,0 +1,40 @@
+.next-project {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    width:100%;
+    padding:0 32px;
+    &__link {
+        flex: 0 0 40%;
+        text-decoration:none;
+        &--textLink {
+            font-size: clamp(32px, 1.6667vw + 26.67px, 48px);
+            background: linear-gradient(180deg, #FFF 30.17%, #B3B3B3 70%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display:flex;
+            align-items:center;
+            line-height:1;
+            span {
+                &:first-child {
+                    margin-right:48px;
+                }
+            }
+        }
+        &--previewLink {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items:flex-start;
+        }
+    }
+    &__preview {
+        flex: 0 0 60%;
+    }
+    &__img {
+        width:100%;
+        max-width:609px;
+        margin:0 0 36px;
+    }
+}

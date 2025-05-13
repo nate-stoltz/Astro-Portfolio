@@ -1,0 +1,7 @@
+@mixin fluid-type($min-font, $max-font, $min-vw: 320px, $max-vw: 1920px) {
+  font-size: clamp(
+    #{$min-font},
+    calc(#{$min-font} + (#{strip-unit($max-font - $min-font)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))),
+    #{$max-font}
+  );
+}

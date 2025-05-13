@@ -1,0 +1,35 @@
+.scrollable {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;   
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &__track {
+        display:flex;
+        width:100%;
+        max-width:50%;
+        &-item {
+            width:100%;
+            max-width:437px;
+            margin:0 24px;
+            &:first-child {
+                margin-left:0;
+            }
+            &:last-child {
+                margin-right:0;
+            }
+            &-link {
+                text-decoration:none;
+                color:#fff;
+                img {
+                    display:block;
+                }
+            }
+        }
+    }
+}

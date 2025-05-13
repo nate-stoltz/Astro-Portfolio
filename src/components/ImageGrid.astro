@@ -1,0 +1,51 @@
+---
+import { getElementClassName } from '../utils/getClassName';
+
+const { images, gridClass } = Astro.props as { images: ImageItem[], gridClass: string };
+---
+
+<div class={getElementClassName('logo-grid', '', gridClass)}>
+    {images.map((img) => (
+      <div class="logo-cell">
+        <img src={img.src} alt={img.alt} />
+      </div>
+    ))}
+  </div>
+
+<style lang="scss">
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  justify-items: center;
+  &--mw500 {
+    max-width:500px;
+  }
+}
+
+.logo-cell {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* maintains shape without fixed px values */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.logo-cell img {
+  max-width: 100%;
+  max-height: 80%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.logo-cell img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+</style>

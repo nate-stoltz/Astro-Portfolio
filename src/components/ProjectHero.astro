@@ -1,0 +1,19 @@
+---
+const { data } = Astro.props;
+import CenteredContent from '../components/CenteredContent.astro';
+---
+
+<section class="main__section main__section--projectHero">
+	<div class="project-hero">
+        <CenteredContent 
+            Headline={data.headline}
+            SubHeadline={data.subheadline}
+            Copy={data.description}
+            PageId="subpage",
+            TextClass="projectHero"
+        />
+		<canvas id="projectHero" class="project-hero__img" data-src={data.previewImage}></canvas>
+	</div>
+</section>
+
+<script type="module" src="/src/scripts/project-hero-init.js"></script>

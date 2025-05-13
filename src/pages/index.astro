@@ -3,15 +3,24 @@
 import MainLayout from "../layouts/MainLayout.astro";
 
 // Component Imports
-import SplideCarousel from "../components/SplideCarousel.astro";
-
+import CenteredContent from '../components/CenteredContent.astro';
+import WebGLCarousel from '../components/WebGLCarousel.astro';
+import ThumbnailCarousel from '../components/ThumbnailCarousel.astro';
 
 ---
 
-<MainLayout>
-	<section>
-		<SplideCarousel>
+<MainLayout pageTitle="Nate Stoltz :: Home" mainId="Landing">
+	<section class="main__section">
+		<CenteredContent 
+            Headline="Nate Stoltz" 
+            SubHeadline=""
+            Copy="I'm an award-winning frontend developer with 13+ years of experience — ready to deliver clean code, responsive design, and real results for your team.",
+			      PageId="landing"
+            ButtonHref = "/projects",
+            ButtonTitle = "View Work",
+            ButtonLabel = "View Work",
+        />
+		<WebGLCarousel />
+    <ThumbnailCarousel />
 	</section>
 </MainLayout>
-
-

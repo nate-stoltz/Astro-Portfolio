@@ -1,0 +1,90 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getMediaProps, type MediaItem } from '../../utils/getMediaProps';
+
+import MainLayout from '../../layouts/MainLayout.astro';
+import ProjectHero from '../../components/ProjectHero.astro';
+
+type ProjectEntry = CollectionEntry<'projects'>;
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+
+  return projects.map((project: ProjectEntry) => ({
+    params: { slug: project.slug },
+    props: { project, allProjects: projects },
+  }));
+}
+
+const { project, allProjects }: { project: ProjectEntry, allProjects: ProjectEntry[] } = Astro.props;
+const { data } = project;
+
+// Determine next project
+const currentIndex = allProjects.findIndex((p) => p.slug === project.slug);
+const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
+---
+
+<MainLayout pageTitle={data.title} mainId={project.slug}>
+  <ProjectHero data={data} />
+
+  <section class="main__section main__section--projectDetails">
+    <aside class="main__aside main__aside--projectDetails">
+      <figure class="main__figure main__figure--aside">
+        <figcaption class="main__figcaption main__figcaption--aside">{data.type}</figcaption>
+        <img src={data.previewImage} alt={data.title} />
+      </figure>
+      <div class="text text--project">
+        <h1 class="text__h1" set:html={data.headline}></h1>
+        <h2 class="text__h2">{data.subheadline}</h2>
+        <p class="text__p">{data.description}</p>
+      </div>
+      <div>
+        <a href={data.siteUrl} class="btn btn--border-white" target="_blank" rel="noopener noreferrer">Visit Site</a>
+        <a href="/contact" class="btn btn--solid-white">Let's Connect</a>
+      </div>
+    </aside>
+
+    <article class="main__article main__article--projectDetails">
+      {(data.media as MediaItem[]).map((media: MediaItem) => {
+        const { src, poster } = getMediaProps(media);
+
+        return src.endsWith('.mp4') ? (
+          <figure>
+            <video src={src} poster={poster} controls playsinline muted />
+          </figure>
+        ) : (
+          <figure>
+            <img src={src} alt="" loading="lazy" />
+          </figure>
+        );
+      })}
+    </article>
+  </section>
+
+  <section class="main__section main__section--nextProject">
+  <article class="main__article main__article--nextProject">
+    <div class="next-project">
+      <a href={`/projects/${nextProject.slug}`} class="next-project__link next-project__link--textLink">
+        <span>Next Project</span>
+        <span class="next-project__arrow">
+          <svg width="41" height="42" viewBox="0 0 41 42" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="0.5" y="1.43945" width="40" height="40" rx="20" stroke="white"></rect> <path d="M29.3536 22.293C29.5488 22.0977 29.5488 21.7812 29.3536 21.5859L26.1716 18.4039C25.9763 18.2087 25.6597 18.2087 25.4645 18.4039C25.2692 18.5992 25.2692 18.9158 25.4645 19.111L28.2929 21.9395L25.4645 24.7679C25.2692 24.9631 25.2692 25.2797 25.4645 25.475C25.6597 25.6702 25.9763 25.6702 26.1716 25.475L29.3536 22.293ZM13 22.4395H29V21.4395H13V22.4395Z" fill="white"></path> </svg>
+        </span>
+      </a>
+      <div class="next-project__preview">
+        <a href={`/projects/${nextProject.slug}`} class="next-project__link next-project__link--previewLink">
+          <img
+            src={nextProject.data.previewImage}
+            alt={nextProject.data.title}
+            loading="lazy"
+            class="next-project__img"
+          />
+          <div class="text text--nextProject">
+            <h2 class="text__h2" set:html={nextProject.data.title}></h2>
+            <h3 class="text__h3">{nextProject.data.type}, {nextProject.data.year}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
+</MainLayout>

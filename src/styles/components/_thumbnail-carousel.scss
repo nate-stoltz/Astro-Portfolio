@@ -1,0 +1,58 @@
+.thumbnail-carousel {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	z-index: 2;
+    width:100%;
+	.thumbnails-wrapper {
+		max-width: 575px;
+		overflow: hidden;
+		scrollbar-width: none; // Firefox
+		-ms-overflow-style: none; // IE
+
+		&::-webkit-scrollbar {
+			display: none; // Chrome + Safari
+		}
+	}
+
+	.thumbnails {
+		display: flex;
+		gap: 0.5rem;
+		transition: transform 0.4s ease;
+		will-change: transform;
+	}
+
+	.thumb {
+		width: 187px;
+		height: 120px;
+		object-fit: cover;
+		cursor: pointer;
+		opacity: 0.85;
+		transition: opacity 0.3s ease;
+        border:2px solid transparent;
+		&:hover {
+			opacity: 1;
+		}
+        &.active {
+			opacity: 1;
+            border-color:#fff;
+		}
+	}
+
+	.nav {
+		background: transparent;
+		border: none;
+		color: white;
+		font-size: 1.5rem;
+		cursor: pointer;
+		display: block;
+		appearance: none;
+		width: 41px;
+		height: 41px;
+	}
+}

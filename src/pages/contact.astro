@@ -1,5 +1,19 @@
 ---
+// Layout Import
+import MainLayout from "../layouts/MainLayout.astro";
+
+//Component Import
+import CenteredContent from '../components/CenteredContent.astro';
 
 ---
 
-<h1>Contact</h1>
+<MainLayout pageTitle="Nate Stoltz :: Contact" mainId="Contact">
+	<section class="main__section">
+		<CenteredContent 
+            Headline="Get in touch!" 
+            SubHeadline="Let's make something cool."
+            Copy="Nate Stoltz\n262.339.7722\nnlstoltz@gmail.com",
+            PageId="subpage",
+        />
+	</section>
+</MainLayout>

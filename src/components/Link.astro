@@ -1,24 +1,47 @@
 ---
 const { href = "/", title, ariaLabel } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const isActive = href === "/" 
+  ? currentPath === "/" 
+  : currentPath === href || currentPath.startsWith(href + "/");
 ---
 
-<a href={href} title={title} aria-label={ariaLabel}>
-    <slot/>
-</a>
+<a href={href} title={title} aria-label={ariaLabel} class={isActive ? 'is-active' : ''}><slot/></a>
 
-<!-- Styles scoped only to NavLink component -->
 <style lang="scss">
-    a {
-        color:#fff;
-        margin:0 24px;
-        font-size:18px;
-        letter-spacing: 1.8px;
-        text-decoration:none;
-        &:first-child {
-            margin-left:0;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
+  a {
+    color: #b3b3b3;
+    margin: 0 24px;
+    font-size: 18px;
+    letter-spacing: 1.8px;
+    text-decoration: none;
+    position:relative;
+    transition:all .33s ease;
+    &:first-child {
+      margin-left: 0;
     }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+        color:#fff;
+    }
+
+    &.is-active {
+      color:#fff;
+      
+      &:after {
+        content:"";
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:2px;
+        background-color:#fff;
+      }
+    }
+  }
 </style>

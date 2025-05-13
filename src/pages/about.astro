@@ -1,5 +1,62 @@
 ---
+// Layout Import
+import MainLayout from "../layouts/MainLayout.astro";
 
+//Component Import
+import CenteredContent from '../components/CenteredContent.astro';
+import SectionMenu from '../components/SectionNav.astro';
+
+const logos  = [
+  { src: '/images/svgs/tools/HTML5.svg', alt: 'HTML5' },
+  { src: '/images/svgs/tools/CSS3.svg', alt: 'CSS3' },
+  { src: '/images/svgs/tools/SASS.svg', alt: 'SASS' },
+  { src: '/images/svgs/tools/JS.svg', alt: 'Javascript' },
+  { src: '/images/svgs/tools/JQuery.svg', alt: 'JQuery' },
+  { src: '/images/svgs/tools/Astro.svg', alt: 'Astro' },
+  { src: '/images/svgs/tools/GitHub.svg', alt: 'GitHub' },
+];
+
+const brands  = [
+  { src: '/images/svgs/brands/tkc-logo.svg', alt: 'True Story' },
+  { src: '/images/svgs/brands/visa-logo.svg', alt: 'Visa' },
+  { src: '/images/svgs/brands/GEHA-logo.svg', alt: 'GEHA' },
+  { src: '/images/svgs/brands/humana-logo.svg', alt: 'Humana' },
+  { src: '/images/svgs/brands/xfinity-logo.svg', alt: 'Xfinity' },
+  { src: '/images/svgs/brands/nissan-logo.svg', alt: 'Nissan' },
+  { src: '/images/svgs/brands/comcast-logo.svg', alt: 'Comcast Business' },
+];
 ---
 
-<h1>About</h1>
+<MainLayout pageTitle="Nate Stoltz :: About" mainId="About">
+	<section class="main__section">
+        <CenteredContent 
+            Headline="Your teammate" 
+            SubHeadline="In a dynamic, digital-first world"
+            Copy="Lorem ipsum dolor sit amet consectetur. Malesuada dolor ornare facilisi egestas a. Pellentesque morbi tortor viverra pellentesque egestas nunc dis eget.",
+            PageId="subpage"
+        />
+    </section>
+    <section class="main__section">
+        <CenteredContent 
+            Headline="Expertise" 
+            SubHeadline="In all things front end"
+            Copy="Lorem ipsum dolor sit amet consectetur. Malesuada dolor ornare facilisi egestas a. Pellentesque morbi tortor viverra pellentesque egestas nunc dis eget.",
+            PageId="subpage",
+            TextClass="mw500"
+            GridClass="mw500",
+            Images={logos}
+        />
+    </section>
+    <section class="main__section">
+        <CenteredContent 
+            Headline="Experience" 
+            SubHeadline="crafting world class solutions\nFor world class brands" 
+            Copy="",
+            PageId="subpage",
+            TextClass="mw500",
+            GridClass="mw500",
+            Images={brands}
+        />
+    </section>
+    <SectionMenu />
+</MainLayout>

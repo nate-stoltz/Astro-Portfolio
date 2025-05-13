@@ -1,0 +1,37 @@
+.btn {
+    border: 2px solid transparent;
+    border-radius:2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display:block;
+    padding:17px 0;
+    margin:0 0 32px;
+    line-height:1;
+    text-align: center;
+    text-decoration:none;
+    font-size:16px;
+    width:100%;
+    max-width:186px;
+    &:last-child {
+        margin-bottom:0;
+    }
+    &--solid-white {
+        background-color: #fff;
+        color: #000; 
+        border-color: #fff;
+
+        &:hover {
+        background-color: #eee; 
+        }
+    }
+
+    &--border-white {
+        background-color: transparent;
+        color: #fff;
+        border-color: #fff;
+
+        &:hover {
+        background-color: rgba(255, 255, 255, 0.1); 
+        }
+    }
+}

@@ -1,0 +1,27 @@
+---
+const page = Astro.props.page || '';
+---
+
+<div class={`thumbnail-carousel ${page}`}>
+	<button class="nav prev" aria-label="Previous">
+        <svg width="41" height="42" viewBox="0 0 41 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="-0.5" y="0.5" width="40" height="40" rx="20" transform="matrix(-1 0 0 1 40 0.939453)" stroke="white"/>
+            <path d="M11.6464 22.293C11.4512 22.0977 11.4512 21.7812 11.6464 21.5859L14.8284 18.4039C15.0237 18.2087 15.3403 18.2087 15.5355 18.4039C15.7308 18.5992 15.7308 18.9158 15.5355 19.111L12.7071 21.9395L15.5355 24.7679C15.7308 24.9631 15.7308 25.2797 15.5355 25.475C15.3403 25.6702 15.0237 25.6702 14.8284 25.475L11.6464 22.293ZM28 22.4395H12V21.4395H28V22.4395Z" fill="white"/>
+        </svg>
+    </button>
+
+	<div class="thumbnails-wrapper">
+		<div class="thumbnails" id="thumbnails">
+			<!-- Thumbnails will be dynamically inserted -->
+		</div>
+	</div>
+
+	<button class="nav next" aria-label="Next">
+        <svg width="41" height="42" viewBox="0 0 41 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="1.43945" width="40" height="40" rx="20" stroke="white"/>
+            <path d="M29.3536 22.293C29.5488 22.0977 29.5488 21.7812 29.3536 21.5859L26.1716 18.4039C25.9763 18.2087 25.6597 18.2087 25.4645 18.4039C25.2692 18.5992 25.2692 18.9158 25.4645 19.111L28.2929 21.9395L25.4645 24.7679C25.2692 24.9631 25.2692 25.2797 25.4645 25.475C25.6597 25.6702 25.9763 25.6702 26.1716 25.475L29.3536 22.293ZM13 22.4395H29V21.4395H13V22.4395Z" fill="white"/>
+        </svg>
+    </button>
+</div>
+
+<script type="module" src="/src/scripts/thumbnail-init.js"></script>
