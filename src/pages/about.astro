@@ -6,24 +6,27 @@ import MainLayout from "../layouts/MainLayout.astro";
 import CenteredContent from '../components/CenteredContent.astro';
 import SectionMenu from '../components/SectionNav.astro';
 
-const logos  = [
-  { src: '/images/svgs/tools/HTML5.svg', alt: 'HTML5' },
-  { src: '/images/svgs/tools/CSS3.svg', alt: 'CSS3' },
-  { src: '/images/svgs/tools/SASS.svg', alt: 'SASS' },
-  { src: '/images/svgs/tools/JS.svg', alt: 'Javascript' },
-  { src: '/images/svgs/tools/JQuery.svg', alt: 'JQuery' },
-  { src: '/images/svgs/tools/Astro.svg', alt: 'Astro' },
-  { src: '/images/svgs/tools/GitHub.svg', alt: 'GitHub' },
+// Utils
+import { withBase } from '../utils/url.js';
+
+const logos = [
+  { src: withBase('/images/svgs/tools/HTML5.svg'), alt: 'HTML5' },
+  { src: withBase('/images/svgs/tools/CSS3.svg'), alt: 'CSS3' },
+  { src: withBase('/images/svgs/tools/SASS.svg'), alt: 'SASS' },
+  { src: withBase('/images/svgs/tools/JS.svg'), alt: 'Javascript' },
+  { src: withBase('/images/svgs/tools/JQuery.svg'), alt: 'JQuery' },
+  { src: withBase('/images/svgs/tools/Astro.svg'), alt: 'Astro' },
+  { src: withBase('/images/svgs/tools/GitHub.svg'), alt: 'GitHub' },
 ];
 
-const brands  = [
-  { src: '/images/svgs/brands/tkc-logo.svg', alt: 'True Story' },
-  { src: '/images/svgs/brands/visa-logo.svg', alt: 'Visa' },
-  { src: '/images/svgs/brands/GEHA-logo.svg', alt: 'GEHA' },
-  { src: '/images/svgs/brands/humana-logo.svg', alt: 'Humana' },
-  { src: '/images/svgs/brands/xfinity-logo.svg', alt: 'Xfinity' },
-  { src: '/images/svgs/brands/nissan-logo.svg', alt: 'Nissan' },
-  { src: '/images/svgs/brands/comcast-logo.svg', alt: 'Comcast Business' },
+const brands = [
+  { src: withBase('/images/svgs/brands/tkc-logo.svg'), alt: 'True Story' },
+  { src: withBase('/images/svgs/brands/visa-logo.svg'), alt: 'Visa' },
+  { src: withBase('/images/svgs/brands/GEHA-logo.svg'), alt: 'GEHA' },
+  { src: withBase('/images/svgs/brands/humana-logo.svg'), alt: 'Humana' },
+  { src: withBase('/images/svgs/brands/xfinity-logo.svg'), alt: 'Xfinity' },
+  { src: withBase('/images/svgs/brands/nissan-logo.svg'), alt: 'Nissan' },
+  { src: withBase('/images/svgs/brands/comcast-logo.svg'), alt: 'Comcast Business' },
 ];
 ---
 
