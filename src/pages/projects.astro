@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import SectionMenu from '../components/SectionNav.astro';
+import { withBase } from '../utils/url.js';
 
 const projects = await getCollection('projects');
 type ProjectEntry = CollectionEntry<'projects'>;
