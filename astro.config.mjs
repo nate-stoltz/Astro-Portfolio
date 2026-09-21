@@ -3,6 +3,7 @@ import glsl from 'vite-plugin-glsl';
 
 export default defineConfig({
   site: 'https://nate-stoltz.github.io',
+  base: '/Astro-Portfolio',
   vite: {
     plugins: [glsl()],
   },
