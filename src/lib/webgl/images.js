@@ -1,4 +1,4 @@
-import { withBase } from './utils/url.js';
+import { withBase } from '../../utils/url.js';
 
 export const images = {
 	landscape: [
