@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@splidejs/splide": "^4.1.4",
-    "@splidejs/splide-shader-carousel": "git+https://github.com/Splidejs/splide-shader-carousel.git",
     "astro": "^5.7.10",
     "gsap": "^3.13.0",
     "three": "^0.176.0",
